@@ -102,7 +102,7 @@ class ImportWebFull extends AbstractImportCommand
         $this->importFromWeb('artists');
         $this->importFromWeb('closures');
         $this->importFromWeb('events');
-        // we do not import events/occurrences here to avoid import:web cascade
+        $this->importFromWeb('events/occurrences');
         $this->importFromWeb('event-programs');
         $this->importFromWeb('exhibitions');
         $this->importFromWeb('hours');
