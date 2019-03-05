@@ -29,6 +29,7 @@ class Asset extends CollectionsModel
         'is_multimedia_resource' => 'boolean',
         'is_educational_resource' => 'boolean',
         'is_teacher_resource' => 'boolean',
+        'source_indexed_at' => 'datetime',
     ];
 
     protected $touches = [

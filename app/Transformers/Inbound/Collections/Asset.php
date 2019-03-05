@@ -10,6 +10,17 @@ use App\Transformers\Inbound\CollectionsTransformer;
 class Asset extends CollectionsTransformer
 {
 
+    protected function getDates( Datum $datum )
+    {
+
+        $dates = parent::getDates( $datum );
+
+        return array_merge( $dates, [
+            'source_indexed_at' => $datum->date('indexed_at'),
+        ]);
+
+    }
+
     protected function getSync( Datum $datum, $test = false )
     {
         return [
